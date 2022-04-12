@@ -7,8 +7,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.JButton;
@@ -101,8 +99,7 @@ public class CadastraProduto extends JFrame implements ActionListener {
 			@Override
 			public void windowClosing(WindowEvent e) {
 				try {
-					if(produtoDB != null)
-						produtoDB.closeConnection();
+					produtoDB.closeConnection();
 				} catch (SQLException se) {
 					System.out.println("Não foi possível conectar ao Banco de Dados");
 				}

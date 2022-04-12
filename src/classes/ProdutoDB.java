@@ -28,7 +28,6 @@ public class ProdutoDB implements IDataBase {
         PreparedStatement pstmt;
 		ResultSet rs;
 
-
 		try {
 
 			pstmt = this.conn.prepareStatement("select codigo, nome, descricao from produto where codigo = ?");
@@ -54,7 +53,9 @@ public class ProdutoDB implements IDataBase {
 
     @Override
     public void closeConnection() throws SQLException {
-        this.conn.close();
+        if(this.conn != null) {
+            this.conn.close();
+        }
     }
 
     @Override

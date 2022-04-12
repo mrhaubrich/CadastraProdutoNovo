@@ -1,8 +1,6 @@
 package models;
 
-public class Produto {
-    
-    private int codigo;
+public class Produto extends DBItem {
     private String nome;
     private String descricao;
 
@@ -10,10 +8,6 @@ public class Produto {
         this.codigo = codigo;
         this.descricao = descricao;
         this.nome = nome;
-    }
-
-    public int getCodigo() {
-        return codigo;
     }
 
     public String getDescricao() {
